@@ -1,0 +1,22 @@
+ var allinone = angular.module('allinone',[]);
+
+allinone.controller('allinoneCtrl',['serverSrv', function($scope, $http){
+	
+	
+
+    
+    
+    
+console.log("scope personen" + $scope.getAllItems);
+}]);
+
+allinone.service("serverSrv",[$http, function($http){
+	this.getAllItems = function () {
+	    var req = {
+	        method: 'GET',
+	        url: 'http://127.0.0.1:5984/allinone/_all_docs?include_docs=true'
+	    };
+	    return $http(req)};
+}]
+
+);	

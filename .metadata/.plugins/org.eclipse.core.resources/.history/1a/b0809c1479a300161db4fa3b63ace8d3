@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+</head>
+
+<body ng-controller="naamCtrl">
+
+	voornaam: <input ng-model="voornaam" type="text" > <br>
+	achternaam: <input ng-model="achternaam" type="text"><br>
+	<br> Hey {{voornaam}}  {{achternaam}}
+
+
+</body>
+
+   <script src="main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.0-rc.0/angular.min.js"></script>
+  
+</html>

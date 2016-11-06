@@ -1,0 +1,10 @@
+.navbar {
+	margin-bottom: 0 !important;
+}
+
+.navbar-transparant {
+	background: transparent !important;
+    z-index: 1 !important;
+    height: 50px !important;
+    border: 0px !important;
+}

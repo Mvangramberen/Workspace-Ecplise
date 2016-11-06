@@ -1,0 +1,6 @@
+var naamApp = angular.module('naamApp', []);
+naamApp.controller('naamCtrl', function($scope){
+$scope.voornaam = 'Micky';
+$scope.achternaam = 'Vangramberen';
+});
+

@@ -1,0 +1,21 @@
+var allinone = angular.module('allinone',['ngRoute'])
+
+allinone.config(function($routeProvider){
+	$routeProvider
+		.when('/home',{
+				templateUrl: 'views/map.html',
+				controller: 'mapCtrl'					
+		})
+		.when('/personen', {
+				templateUrl: 'views/personen.html',
+				controller: 'personenCtrl'
+		})
+		
+})
+
+allinoneCtrl.controller('allinoneCtrl', ['$scope', function allinoneCtrl($scope){
+	$scope.personen = ["micky","jens","brakkeman","gilles"];
+	
+	
+	
+}])

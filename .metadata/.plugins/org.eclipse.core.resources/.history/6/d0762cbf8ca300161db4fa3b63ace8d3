@@ -1,0 +1,14 @@
+var naamApp = angular.module('naamApp', []);
+naamApp.controller('naamCtrl', function($scope, $http){
+$http.get("http://127.0.0.1:5984/oefening_leaflet/_all_docs").success(function(databankData){
+	$scope.databankData = databankData;
+});
+
+$scope.verwijderNaam = function(naam){
+	var index = $scope.namen.indexOf(naam);
+	$scope.namen.splice(index, 1);
+}
+
+
+});
+

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>All in one App</title>
+<link rel="stylesheet" href="style/main.css" type="text/css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-alpha.5/js/bootstrap.min.js">
+<link rel="stylesheet"
+	href="https://unpkg.com/leaflet@1.0.1/dist/leaflet.css" />
+
+</head>
+<body onload="mapinit()">
+	<div id="header"><h1>titel, header</h1></div>
+	<div class="navbar-header">
+		<h2>nav-bar</h2>
+		<ul class="nav navbar-nav">
+			<li class="active">Personen</li>
+		</ul>
+	</div>
+
+
+		<div id="side">
+			<input type="text" placeholder="hier uw naam"><br>
+			<input type="button" value="uw locatie" onclick="getLocation()"><br>
+			<input type="button" value="deel locatie" onclick="shareLocation()"><br>
+			<input type="button" value="toon alle locaties" onclick="showAllLocations()"><br>
+		</div>
+		<div id="map" >map </div>
+
+ 	<div id="footer">footer</div>
+
+</body>
+
+<script
+	src="https://opensource.keycdn.com/angularjs/1.5.8/angular.min.js "></script>
+<script src="https://unpkg.com/leaflet@1.0.1/dist/leaflet.js"></script>
+<script src="js/main.js"></script>
+<script src="js/couchDbAngular.js"></script>
+
+</html>

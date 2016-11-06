@@ -1,0 +1,4 @@
+function naamCtrl($scope){
+	$scope.voornaam ="micky";
+	$scope.achternaam="vangramberen";
+}

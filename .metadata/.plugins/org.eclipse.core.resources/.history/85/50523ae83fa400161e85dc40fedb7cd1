@@ -1,0 +1,31 @@
+ var allinone = angular.module('allinone',[]);
+
+allinone.controller('allinoneCtrl', function($scope){
+$scope.aGebruiker = [];
+
+$.ajax({
+	type: "GET",
+	url: "http://127.0.0.1:5984/allinone/_all_docs?include_docs=true",
+	datatype: 'json',
+	success: function(oData) {
+		
+		var oPersoon = JSON.parse(oData);
+		for (var teller = 0; teller < oPersoon.rows.length  ; teller++) {
+				if (oPersoon.rows[teller].doc.naam) {					
+				oMap.addLayer(L.marker([oPersoon.rows[teller].doc.locatie.breedtegraad,oPersoon.rows[teller].doc.locatie.lengtegraad]).bindPopup(oPersoon.rows[teller].doc.naam));
+				$scope.aGebruiker.push({naam : 'test'});
+				
+
+				}
+		}	
+		console.log("De data is succesvol geladen");
+		
+	},
+	error: function(oError) {
+		console.log("Het laden van de data geeft volgende foutmelding : " + oError);
+	},
+});	
+console.log("A " + teller + " : " + $scope.aGebruiker[1].naam);
+console.log("scope personen" + $scope.aGebruiker);
+});
+

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+		<item value="C:\Users\Mickaël\Downloads\AngularBackBone-master\AngularBackBone-master"/>
+		<item value="C:\Users\Mickaël\Downloads\QuotesSampleApp\app"/>
+		<item value="D:\Workspace Ecplise\location"/>
+		<item value="C:\Users\Mickaël\Downloads\location-20161103T155000Z\location"/>
+		<item value="C:\Users\Mickaël\Downloads\location-20161103T155000Z"/>
+	</list>
+	<section name="NewWizardAction">
+		<item value="com.pittypanda.plugins.couch.wizard" key="NewWizardSelectionPage.STORE_SELECTED_ID"/>
+		<list key="NewWizardSelectionPage.STORE_EXPANDED_CATEGORIES_ID">
+			<item value="com.pittypanda.plugins.couch.category"/>
+			<item value="org.eclipse.wst.jsdt.ui.java"/>
+		</list>
+	</section>
+</section>

@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;Oefening Leaflet/app/_attachments/ja&apos; to &apos;js&apos;" description="Rename resource &apos;ja&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="app/_attachments/ja" name="js" stamp="1478183877052" updateReferences="true"/>
+</session>

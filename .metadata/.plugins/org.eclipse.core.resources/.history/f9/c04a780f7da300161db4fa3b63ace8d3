@@ -1,0 +1,30 @@
+<!DOCTYPE>
+
+<html >
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+   <script src="main.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+   <script>
+   	function naamCtrl($scope){
+   		$scope.voornaam="micky";
+   		$scope.achternaam ="vangramberen";
+   	}
+   
+   </script>
+</head>
+
+<body ng-app>
+
+<div ng-controlle="naamCtrl">
+	voornaam: <input ng-model="voornaam" type="text" > <br>
+	achternaam: <input ng-model="achternaam" type="text"><br>
+	<br> Hey {{voornaam}}  {{achternaam}}
+</div>
+
+</body>
+
+ 
+  
+</html>

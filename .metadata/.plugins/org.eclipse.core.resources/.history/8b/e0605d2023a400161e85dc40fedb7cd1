@@ -1,0 +1,92 @@
+var oPositie = {};
+var oGebruiker = {};
+
+
+var oMap = L.map('map').setView([51.21581,4.41241], 15);
+
+
+function mapinit(){
+	
+	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpandmbXliNDBjZWd2M2x6bDk3c2ZtOTkifQ._QA7i5Mpkd_m30IGElHziw'
+			, 	{maxZoom: 18,
+				attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, ' +
+				'<a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
+				'Imagery © <a href="http://mapbox.com">Mapbox</a>',
+				id: 'mapbox.streets'
+				}).addTo(oMap);
+	
+}
+
+
+function getLocation(){
+navigator.geolocation.getCurrentPosition(
+
+		function(positie){
+					oPositie.lengtegraad = positie.coords.longitude;
+					oPositie.breedtegraad = positie.coords.latitude;
+					oGebruiker.locatie  = oPositie;
+					
+					oMap.addLayer(L.marker([oPositie.breedtegraad, oPositie.lengtegraad]).bindPopup("Uw positie"));
+					oMap.setView([oPositie.breedtegraad, oPositie.lengtegraad],15);
+					
+						},
+						function(oError){
+							console.log(oError);
+						});
+	
+}
+
+
+function shareLocation(){
+	oGebruiker.naam = $('#gebruiker').val();
+
+	if(oGebruiker.naam)
+		{
+			if(oGebruiker.locatie)
+				{
+					var gebruikerJson = {
+							"naam" : oGebruiker.naam,
+							"locatie" : oGebruiker.locatie
+					}
+				
+			var callback = $.ajax({
+						type: "POST",
+						url: "http://127.0.0.1:5984/allinone",
+						data: JSON.stringify(gebruikerJson),
+						contentType: "application/json",
+						success: function(){console.log("Successvol geupload: id = " + callback.getResponseHeader("Etag"));
+											oGebruiker.id = callback.getResponseHeader("Etag");},
+						error: function(){console.log("Gefaald in uploaden")}
+					});			
+				}
+			else
+				{
+					console.log("Geen locatie gevonden");
+				}
+		}
+	else
+		{
+		console.log("Gebruiker is niet ingevuld");
+		}
+}
+
+function showAllLocations(){
+	$.ajax({
+		type: "GET",
+		url: "http://127.0.0.1:5984/allinone/_all_docs?include_docs=true",
+		datatype: 'json',
+		success: function(oData) {
+			console.log("locatie : " + oPersoon.rows[1].doc.locatie);
+			var oPersoon = JSON.parse(oData);
+			for (var teller = 1; teller < oPersoon.rows.length  ; teller++) {
+					if (oPersoon.rows[teller].doc.naam) {					
+					oMap.addLayer(L.marker(oPersoon.rows[teller].doc.locatie).bindPopup(oPersoon.rows[teller].doc.naam));
+				}
+			}
+			console.log("De data is succesvol geladen");
+		},
+		error: function(oError) {
+			console.log("Het laden van de data geeft volgende foutmelding : " + oError);
+		},
+	});	
+}

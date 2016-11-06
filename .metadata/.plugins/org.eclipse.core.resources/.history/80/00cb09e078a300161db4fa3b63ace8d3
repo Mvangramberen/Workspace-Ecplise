@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.3/css/bootstrap.min.css" integrity="sha384-MIwDKRSSImVFAZCVLtU0LMDdON6KVCrZHyVQQj6e8wIEJkW4tvwqXrbMIya1vriY" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.2/css/bootstrap3/bootstrap-switch.min.css" integrity="sha384-vVeW0vK0Dcrl3yDe9pkiU0lzno1emJy3EAQT9X6bTvfj5edXH7FJ07KONGSIZshn" crossorigin="anonymous">
+  <link rel="stylesheet" href="custom.css">
+</head>
+
+<body ng-controller="naamCtrl">
+
+	voornaam: <input ng-model="voornaam" type="text" > <br>
+	achternaam: <input ng-model="achternaam" type="text"><br>
+	<br> Hey {{voornaam}}  {{achternaam}}
+
+
+</body>
+
+   <script src="main.js"></script>
+   <script src ="https://github.com/angular/angular.js"></script>
+  
+</html>

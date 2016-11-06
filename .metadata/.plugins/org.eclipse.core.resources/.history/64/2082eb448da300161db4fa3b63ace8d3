@@ -1,0 +1,11 @@
+var naamApp = angular.module('naamApp', []);
+naamApp.controller('naamCtrl', function($scope, $http){
+$http.get({method: 'jsonp', url:"http://127.0.0.1:5984/oefening_leaflet/_all_docs"}).success(function(databankData){
+	$scope.databankData = databankData;
+});
+
+console.log($scope.databankData.naam);
+
+
+});
+

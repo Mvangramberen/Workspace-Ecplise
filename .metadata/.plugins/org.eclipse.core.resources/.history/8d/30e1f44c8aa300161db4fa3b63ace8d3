@@ -1,0 +1,9 @@
+var naamApp = angular.module('naamApp', []);
+naamApp.controller('naamCtrl', function($scope){
+$scope.namen = ["micky","mathias","gilles","jens"];
+$scope.naamToevoegen = function (){
+	$scope.namen.push($scope.ingevuldeNaam);
+};
+
+});
+

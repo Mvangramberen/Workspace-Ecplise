@@ -1,0 +1,37 @@
+ var allinone = angular.module('allinone',[$http]);
+
+allinone.controller('allinoneCtrl',['serverSrv', function($scope, $http){
+	
+	
+
+    
+    
+    
+console.log("scope personen" + serverSrv.getAllItems);
+}]);
+
+allinone.service("serverSrv",[$http, function($http){
+	this.getAllItems = function () {
+	    var req = {
+	        method: 'GET',
+	        url: 'http://127.0.0.1:5984/allinone/_all_docs?include_docs=true'
+	    };
+	    return $http(req)};
+}]
+
+);	
+
+function($resource){
+	 var server =    $resource('http://127.0.0.1:5984/allinone/_all_docs?include_docs=true',
+		              {
+		                ListTodos: { method: "GET", params: {} },
+		                GetTodo: { method: "GET", params: { id: 0 } },                            
+		                CreateTodo: { method: "POST", params: { content: "", order: 0, done: false } },
+		                UpdateTodo: { method: "PATCH", params: { /*...*/ } },
+		                DeleteTodo: { method: "DELETE", params: { id: 0 } },
+		                ResetTodos: { method: "GET", params: { cmd: "reset" } },
+		              });
+	
+	
+	
+}

@@ -1,0 +1,29 @@
+<!DOCTYPE>
+
+<html ng-app="naamApp">
+<head>
+  <meta charset="utf-8">
+  <title>Title</title>
+   
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.1/angular.min.js"></script>
+<!--Zorg ervoor dat de main.js als laatste geladen wordt, anders gaat hij angular niet in de javascript herkennen  -->   
+   <script src="main.js"></script>
+   
+   
+</head>
+
+<body ng-controller="naamCtrl">
+
+<div >
+
+	voornaam: <input ng-model="voornaam" type="text" > <br>
+	achternaam: <input ng-model="achternaam" type="text"><br>
+	<br> Hey {{voornaam}}  {{achternaam}}
+	
+</div>
+
+</body>
+
+ 
+  
+</html>

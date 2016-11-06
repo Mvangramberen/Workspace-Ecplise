@@ -1,0 +1,3 @@
+var oPositie = {};
+
+var oMap = l.map('map').setView([51.21581,4.41241], 15);
